@@ -1,0 +1,151 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Màu nền tối */
+    color: #ffffff; /* Màu chữ sáng */
+}
+
+.container {
+    margin: 50px auto;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #1f1f2e; /* Nền của container */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #ff4081; /* Màu chữ h1 */
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #212121; /* Nền bảng */
+    color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #444; /* Đường viền dưới các ô */
+}
+
+th {
+    background-color: #282828; /* Màu nền của header */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+td {
+    font-size: 14px;
+}
+
+tr:nth-child(even) {
+    background-color: #333; /* Màu nền cho các hàng chẵn */
+}
+
+tr:hover {
+    background-color: #454545; /* Màu nền khi di chuột qua hàng */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+select, input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: white;
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #009688;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #00796b;
+}
+
+.input-field {
+    width: 100%;
+    max-width: 400px; /* Điều chỉnh kích thước theo nhu cầu */
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #555; /* Tùy chỉnh viền */
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: white;
+    padding: 10px 15px;
+    background-color: #333;
+    margin: 0 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #555; /* Màu khi di chuột vào trang */
+}
+
+.pagination a.active {
+    background-color: #ff4081; /* Màu cho trang đang chọn */
+    pointer-events: none; /* Không thể click */
+}
+
+/* Thẻ trạng thái */
+.status {
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+}
+
+.status.success {
+    background-color: #4CAF50; /* Màu xanh cho trạng thái thành công */
+}
+
+.status.failure {
+    background-color: #F44336; /* Màu đỏ cho trạng thái thất bại */
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+    th, td {
+        font-size: 12px;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+
+    .pagination a {
+        padding: 8px;
+    }
+}

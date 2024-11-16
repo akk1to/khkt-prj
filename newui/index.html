@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3c327262ed.js" crossorigin="anonymous"></script>
+    <title>Student Violations</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="Tên">
+            <input type="text" placeholder="Lớp">
+            <input type="text" placeholder="Loại vi phạm">
+            <input type="text" placeholder="Biển số xe">
+            <input type="text" placeholder="Ghi chú">
+            <button class="details-button">Nhập chi tiết</button>
+            <button class="submit-button">Gửi ➔</button>
+        </div>
+
+        <form id="searchForm">
+            <div class="secondary-search-bar">
+                <select id="searchType" name="searchInput" class="input-field">
+                    <option value="ten_hoc_sinh">Tên học sinh</option>
+                    <option value="idlop">Lớp</option>
+                    <option value="bien_so_xe">Biển số xe</option>
+                </select>
+            </div>
+        </form>
+        <div class="secondary-search-bar">
+            <label for>
+            <input type="text" placeholder="Nội dung tìm kiếm">
+            <button class="search-button" type="submitsearch">Tìm kiếm ➔</button>
+            <button class="export-button" type="export">Xuất dữ liệu</button>
+        </div>
+
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>TÊN HỌC SINH</th>
+                    <th>LỚP</th>
+                    <th>BIỂN SỐ XE</th>
+                    <th>NGÀY VI PHẠM</th>
+                    <th>GHI CHÚ</th>
+                    <th>THAO TÁC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- data put here -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Edit Popup Modal -->
+        <div class="modal" id="editModal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-header">Chỉnh sửa nội dung</h2>
+                <form id="editForm" onsubmit="submitEditForm(event)">
+                    <input type="hidden" id="rowId" name="id">
+                    <div class="form-group">
+                        <label>Tên học sinh:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label>Lớp:</label>
+                        <input type="text" id="class" name="class">
+                    </div>
+                    <div class="form-group">
+                        <label>Biển số xe:</label>
+                        <input type="text" id="plate" name="plate">
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày vi phạm:</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Ghi chú:</label>
+                        <input type="text" id="note" name="note">
+                    </div>
+                    <button type="submit" class="submit-button">Lưu thay đổi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./updatedata.js"></script>
+    <script src="./auto.js"></script>
+</body>
+</html>

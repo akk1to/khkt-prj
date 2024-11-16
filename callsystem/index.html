@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Tổng Đài Liên Lạc</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000;
+        }
+
+        .contact-system {
+            background-color: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+
+        .contact-system h2 {
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .contact-system form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 1rem;
+            color: #333;
+            text-align: left;
+        }
+
+        .contact-system input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-system button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-sub{
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-system button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-system">
+        <h2>Hệ thống tổng đài liên lạc</h2>
+        <form action="call.php" method="post">
+            <label for="phone">Nhập số cần liên lạc:</label>
+            <input type="text" id="phone" name="phone" placeholder="VD: 84342442335">
+            
+            <label for="content">Nội dung cuộc gọi:</label>
+            <input type="text" id="content" name="content" placeholder="VD: Tổng đài vi phạm trường THPT Bến Cát xin nghe...">
+            
+            <input type="submit" value="Gọi ngay" class="button-sub">
+        </form>
+    </div>
+    <!-- <h1>Hệ thống tổng đài chưa hoàn thành do đang gặp vấn đề về API!</h1> -->
+</body>
+</html>

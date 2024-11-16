@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Violation Table</title>
+    <link rel="stylesheet" href="./rep.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-controls">
+            <select id="session">
+                <option value="">Buổi</option>
+                <!-- Add more options here -->
+            </select>
+            <select id="class">
+                <option value="">Lớp</option>
+                <!-- Add more options here -->
+            </select>
+            <select id="student-name">
+                <option value="">Tên học sinh</option>
+                <!-- Add more options here -->
+            </select>
+            <input type="date" id="violation-date" placeholder="Ngày vi phạm">
+            <input type="text" id="note" placeholder="Ghi chú">
+            <button id="add-detail">Nhập chi tiết</button>
+            <button id="send">Gửi ➔</button>
+        </div>
+
+        <div class="search-controls">
+            <select id="violation-type">
+                <option value="">Loại vi phạm</option>
+                <!-- Add more options here -->
+            </select>
+            <input type="text" id="search-content" placeholder="Nội dung tìm kiếm">
+            <button id="search">Tìm kiếm ➔</button>
+            <button id="export">Xuất dữ liệu</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Họ</th>
+                    <th></th>
+                    <th>Tên</th>
+                    <th>Lớp</th>
+                    <th>Biển số xe</th>
+                    <th>Ngày vi phạm</th>
+                    <th>Ghi chú</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample data -->
+                <tr>
+                    <td>1</td>
+                    <td>Nguyễn Quang<td>
+                    <td>Quang</td>
+                    <td>10C7</td>
+                    <td>61G5-16683</td>
+                    <td>2024-10-16</td>
+                    <td>test</td>
+                    <td>
+                        <button class="edit-button">✏️</button>
+                        <button class="delete-button">❌</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Nguyễn Quang Quang<td>
+                    <td>Quang</td>
+                    <td>10C4</td>
+                    <td>G1GK-16336</td>
+                    <td>2024-11-13</td>
+                    <td>Chưa qua xử lý</td>
+                    <td>
+                        <button class="edit-button">✏️</button>
+                        <button class="delete-button">❌</button>
+                    </td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </div>
+        <!-- Edit Popup Modal -->
+        <div class="modal" id="editModal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-header">Chỉnh sửa nội dung</h2>
+                <form id="editForm" onsubmit="submitEditForm(event)">
+                    <input type="hidden" id="rowId" name="id">
+                    <div class="form-group">
+                        <label>Tên học sinh:</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label>Lớp:</label>
+                        <input type="text" id="class" name="class">
+                    </div>
+                    <div class="form-group">
+                        <label>Biển số xe:</label>
+                        <input type="text" id="plate" name="plate">
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày vi phạm:</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Ghi chú:</label>
+                        <input type="text" id="note" name="note">
+                    </div>
+                    <button type="submit" class="submit-button">Lưu thay đổi</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./updatedata.js"></script>
+    <script src="./auto.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra cứu học sinh</title>
+    <link rel="stylesheet" href="style.css"> <!-- Tham chiếu tới file CSS đã tạo -->
+</head>
+<body>
+    <div class="container">
+        <h1>Xuất dữ liệu</h1>
+        <!-- Form chọn phương thức tra cứu -->
+        <form id="searchForm" action="export-excel.php" method="post">
+            <div class="form-group">
+                <label for="searchType">Chọn phương pháp tra cứu:</label>
+                <select id="searchType" name="searchType" class="input-field">
+                    <option value="ten_hoc_sinh">Họ tên học sinh</option>
+                    <option value="idlop">Lớp</option>
+                    <option value="bien_so_xe">Biển số xe</option>
+                    <option value="ngay_vi_pham">Ngày vi phạm</option>
+                    <option value="date_range">Những vi phạm từ ngày ... tới ngày</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="searchInput">Nhập thông tin tra cứu:</label>
+                <input type="text" id="searchInput" name="searchInput" class="input-field" required>
+            </div>
+
+            <!-- Khi chọn "Những vi phạm từ ngày ... tới ngày" sẽ hiện hai ô nhập ngày -->
+            <div id="dateRange" style="display:none;">
+                <label for="startDate">Từ ngày:</label>
+                <input type="date" id="startDate" name="startDate">
+                <label for="endDate">Đến ngày:</label>
+                <input type="date" id="endDate" name="endDate">
+            </div>
+
+            <input type="submit" value="Xuất dữ liệu">
+        </form>
+
+        <!-- Bảng hiển thị kết quả
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tên học sinh</th>
+                    <th>Lớp</th>
+                    <th>Biển số xe</th>
+                    <th>Ngày vi phạm</th>
+                    <th>Ghi chú</th>
+                </tr>
+            </thead>
+            <tbody> -->
+                <!-- Dữ liệu sẽ được chèn vào đây -->
+            <!-- </tbody>
+        </table> -->
+
+        <div class="pagination"></div>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
